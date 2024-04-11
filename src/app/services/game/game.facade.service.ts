@@ -15,8 +15,9 @@ export class GameFacadeService {
 
   startGame(): void {
     this.levelService.start();
-    const hero = this.heroService.getHero();
-    this.singletonService.setHero(hero);
+    this.heroService.getHero().subscribe((hero) => {
+      this.singletonService.setHero(hero);
+    });
   }
 
   // Add more facade methods as needed to interact with other game services

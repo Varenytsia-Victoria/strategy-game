@@ -1,0 +1,9 @@
+<!-- monster.component.html -->
+<div
+  *ngFor="let monster of monster"
+  class="monster"
+  [style.left.px]="monster.x"
+  [style.top.px]="monster.y"
+>
+  <img src="../../../assets/images/monster.png" alt="Monster" />
+</div>

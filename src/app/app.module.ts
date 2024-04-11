@@ -6,6 +6,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { SkillTreeComponent } from './components/skill-tree/skill-tree.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { MonsterComponent } from './components/monster/monster.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { AppComponent } from './app.component';
     InventoryComponent,
     ShopComponent,
     SkillTreeComponent,
+    MonsterComponent,
   ],
   imports: [CommonModule, BrowserModule],
   providers: [],

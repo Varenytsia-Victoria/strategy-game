@@ -9,9 +9,12 @@ export class GameSingletonService {
   private hero: Hero;
 
   private constructor() {
-    this.hero = { name: '', health: 0, attack: 0 };
+    this.hero = { name: '', health: 0, attack: 0, x: 0, y: 0};
   }
 
+
+
+  
   static getInstance(): GameSingletonService {
     if (!GameSingletonService.instance) {
       GameSingletonService.instance = new GameSingletonService();

@@ -1,20 +1,37 @@
 <div class="game-container">
-  <h1>Welcome to My Game</h1>
   <div class="game-content">
-    <!-- Display game content here -->
     <div>
       <h2>Level: {{ currentLevel }}</h2>
-      <button (click)="upgradeLevel()">Upgrade Level</button>
     </div>
     <div>
       <h2>Hero Stats</h2>
       <p>Health: {{ hero.health }}</p>
       <p>Attack: {{ hero.attack }}</p>
-      <!-- Display more hero stats here -->
     </div>
-    <!-- Display inventory, shop, skill tree, etc. components here -->
+
     <app-inventory></app-inventory>
     <app-shop></app-shop>
     <app-skill-tree></app-skill-tree>
+
+    
   </div>
+  <img
+    src="../../../assets/images/player.png"
+    alt="Hero"
+    class="hero"
+    [style.left.px]="hero.x"
+    [style.top.px]="hero.y"
+  />
+
+  <app-monster
+      *ngFor="let monster of monsters"
+      [monster]="monsters"
+    ></app-monster>
+
+    <div class="modal" [ngClass]="{ 'show': gameOver }">
+    <div class="modal-content">
+      <p>Game Over!</p>
+    </div>
+  </div>
+
 </div>
