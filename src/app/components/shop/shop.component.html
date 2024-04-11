@@ -1,0 +1,9 @@
+<div class="shop-container">
+  <h2>Shop</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      {{ item.name }} - {{ item.price }}
+      <button (click)="buyItem(item)">Buy</button>
+    </li>
+  </ul>
+</div>

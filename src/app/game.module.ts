@@ -4,19 +4,17 @@ import { GameComponent } from './components/game/game.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { SkillTreeComponent } from './components/skill-tree/skill-tree.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent, // Додайте AppComponent до декларацій
     GameComponent,
     InventoryComponent,
     ShopComponent,
     SkillTreeComponent,
   ],
-  imports: [CommonModule, BrowserModule],
-  providers: [],
-  bootstrap: [AppComponent],
+  imports: [CommonModule],
+  exports: [
+    GameComponent, // Якщо вам потрібно експортувати GameComponent для використання у інших модулях
+  ],
 })
-export class AppModule {}
+export class GameModule {}
