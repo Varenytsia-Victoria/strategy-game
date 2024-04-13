@@ -4,6 +4,7 @@ import { HeroService } from '../../services/hero/hero.service';
 import { Hero } from '../../models/hero';
 import { Monster } from '../../models/monster';
 import { MonsterService } from '../../services/monster/monster.service';
+import { ShopService } from '../../services/shop/shop.service';
 
 @Component({
   selector: 'app-game',
@@ -18,7 +19,8 @@ export class GameComponent implements OnInit {
 
   constructor(
     private heroService: HeroService,
-    private monsterService: MonsterService
+    private monsterService: MonsterService,
+    private shopService: ShopService // Додайте сервіс магазину тут
   ) {
     this.currentLevel = 1;
   }
@@ -60,6 +62,9 @@ export class GameComponent implements OnInit {
           this.attack();
           break;
       }
+
+      // Перевірте, чи гравець наближається до магазину
+     
     }
   }
 

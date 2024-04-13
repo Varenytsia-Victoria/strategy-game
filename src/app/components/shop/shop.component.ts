@@ -9,6 +9,11 @@ import { Item } from '../../models/item';
 })
 export class ShopComponent implements OnInit {
   items: Item[];
+  playerX: number = 0; // Положення гравця по осі X
+  playerY: number = 0; // Положення гравця по осі Y
+  shopX: number = 100; // Положення магазину по осі X
+  shopY: number = 100; // Положення магазину по осі Y
+  isNearShop: boolean = false;
 
   constructor(private shopService: ShopService) {
     this.items = [];
@@ -21,4 +26,6 @@ export class ShopComponent implements OnInit {
   buyItem(item: Item): void {
     this.shopService.buyItem(item);
   }
+
+  
 }

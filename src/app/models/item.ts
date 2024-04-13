@@ -1,6 +1,6 @@
 export interface Item {
   name: string;
-  description: string;
   price: number;
+  //додай картинку речі
   // Додайте інші властивості за потреби
 }

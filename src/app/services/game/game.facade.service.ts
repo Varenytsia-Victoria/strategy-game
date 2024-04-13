@@ -14,11 +14,31 @@ export class GameFacadeService {
   ) {}
 
   startGame(): void {
+    this.showWelcomeModal();
+
     this.levelService.start();
     this.heroService.getHero().subscribe((hero) => {
       this.singletonService.setHero(hero);
     });
   }
 
-  // Add more facade methods as needed to interact with other game services
+  endGame(): void {
+    // Завершення гри: видалення героя, монстрів та інших об'єктів гри
+    //this.heroService.deleteHero();
+    //this.monsterService.deleteMonsters();
+  }
+
+  private showWelcomeModal(): void {
+    const welcomeModal = document.getElementById('welcomeModal');
+    if (welcomeModal) {
+      welcomeModal.style.display = 'block';
+    }
+  }
+
+  closeModal(): void {
+    const welcomeModal = document.getElementById('welcomeModal');
+    if (welcomeModal) {
+      welcomeModal.style.display = 'none';
+    }
+  }
 }
