@@ -6,14 +6,15 @@
     <div>
       <h2>Hero Stats</h2>
       <p>Health: {{ hero.health }}</p>
-      <p>Attack: {{ hero.attack }}</p>
+      <p>Attack: {{ hero.attack }}</p> <br>
+      <p>Coins: {{ hero.coins }}</p>
+      <p>Diamonds: {{ hero.diamonds }}</p>
     </div>
 
-    <app-inventory></app-inventory>
-    <app-shop></app-shop>
-    <app-skill-tree></app-skill-tree>
 
-    
+    <app-inventory class="inventory"></app-inventory>
+<app-shop ></app-shop>
+    <app-skill-tree></app-skill-tree>
   </div>
   <img
     src="../../../assets/images/player.png"
@@ -24,14 +25,13 @@
   />
 
   <app-monster
-      *ngFor="let monster of monsters"
-      [monster]="monsters"
-    ></app-monster>
+    *ngFor="let monster of monsters"
+    [monster]="monsters"
+  ></app-monster>
 
-    <div class="modal" [ngClass]="{ 'show': gameOver }">
+  <div class="modal" [ngClass]="{ show: gameOver }">
     <div class="modal-content">
       <p>Game Over!</p>
     </div>
   </div>
-
 </div>

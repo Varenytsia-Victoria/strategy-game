@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HeroService } from './hero.service';
+import { Hero } from '../../models/hero';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,14 @@ import { HeroService } from './hero.service';
 export class HeroDecoratorService {
   constructor(private heroService: HeroService) {}
 
-  addAbility(ability: string): void {
-    // Implement decorator logic to add abilities to the hero
+  addSkill(skill: string): void {
+    this.heroService.getHero().subscribe((hero: Hero) => {
+      if (!hero.skills.includes(skill)) {
+        hero.skills.push(skill);
+        console.log(`Added skill ${skill} to the hero`);
+      } else {
+        console.log(`Hero already has skill ${skill}`);
+      }
+    });
   }
 }

@@ -13,3 +13,55 @@ ul {
 li {
   margin-bottom: 10px;
 }
+
+.shop-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+.modal {
+  display: none; /* Початково приховуємо модальне вікно */
+  position: fixed; /* Залишаємо на місці */
+  z-index: 10; /* Поверх інших елементів */
+  left: 0;
+  top: 0;
+  width: 100%; /* Повна ширина */
+  height: 100%; /* Повна висота */
+  overflow: auto; /* Дозволяємо прокрутку, якщо потрібно */
+  background-color: rgba(0, 0, 0, 0.4); /* Чорний з прозорістю */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% від верху та по центру */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Може бути більше або менше, в залежності від розміру екрана */
+}
+
+/* Клас show використовується для показу модального вікна */
+.show {
+  display: block;
+}

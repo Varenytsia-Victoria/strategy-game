@@ -13,7 +13,9 @@
   flex-direction: row-reverse;
 }
 
-
+.inventory{
+  padding-right: 30rem;
+}
 /* game.component.css */
 /* Modal */
 .modal {

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../services/shop/shop.service';
 import { Item } from '../../models/item';
+import { Hero } from '../../models/hero';
+import { HeroService } from '../../services/hero/hero.service';
 
 @Component({
   selector: 'app-shop',
@@ -9,23 +11,33 @@ import { Item } from '../../models/item';
 })
 export class ShopComponent implements OnInit {
   items: Item[];
-  playerX: number = 0; // Положення гравця по осі X
-  playerY: number = 0; // Положення гравця по осі Y
-  shopX: number = 100; // Положення магазину по осі X
-  shopY: number = 100; // Положення магазину по осі Y
-  isNearShop: boolean = false;
+  hero: Hero; // Додайте змінну для збереження об'єкта героя
 
-  constructor(private shopService: ShopService) {
+  constructor(
+    private shopService: ShopService,
+    private heroService: HeroService // Додайте HeroService до конструктора
+  ) {
     this.items = [];
+    this.hero = {
+      coins: 0,
+      diamonds: 0,
+      name: '',
+      health: 0,
+      attack: 0,
+      x: 0,
+      y: 0,
+      skills:[]
+    }; // Ініціалізуйте об'єкт героя
   }
 
   ngOnInit(): void {
     this.items = this.shopService.getShopItems();
+    this.heroService.getHero().subscribe((hero) => {
+      this.hero = hero; // Збережіть дані про героя в змінній hero
+    });
   }
 
   buyItem(item: Item): void {
-    this.shopService.buyItem(item);
+    this.shopService.buyItem(item, this.hero); // Передайте об'єкт героя у метод buyItem
   }
-
-  
 }

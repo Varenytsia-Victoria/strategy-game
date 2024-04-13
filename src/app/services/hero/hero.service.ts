@@ -6,7 +6,16 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HeroService {
-  private hero: Hero = { name: 'Hero', health: 100, attack: 10, x: 0, y: 150 };
+  private hero: Hero = {
+    coins: 100,
+    diamonds: 5,
+    name: 'Hero',
+    health: 100,
+    attack: 10,
+    x: 30,
+    y: 200,
+    skills:[]
+  };
   private heroSubject = new BehaviorSubject<Hero>(this.hero);
 
   getHero(): Observable<Hero> {

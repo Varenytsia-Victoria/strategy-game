@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../../models/item';
-import { InventoryService } from '../inventory/inventory.service'; // Імпорт сервісу інвентарю
+import { InventoryService } from '../inventory/inventory.service';
+import { Hero } from '../../models/hero';
+import { HeroService } from '../hero/hero.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,37 +11,51 @@ export class ShopService {
   private shopX: number = 100;
   private shopY: number = 100;
   private shopItems: Item[] = [
-    { name: 'Sword', price: 50 },
-    { name: 'Potion', price: 20 },
-    { name: 'Magic Staff', price: 100 },
+    {
+      name: 'Sword',
+      price: 50,
+      image: '../../../../../assets/images/commonSword.png ',
+      attack: 30,
+      health: 0,
+    },
+    {
+      name: 'Health Potion',
+      price: 20,
+      image: '../../../../../assets/images/potion1.png ',
+      attack: 0,
+      health: 50,
+    },
+    {
+      name: 'Magic Staff',
+      price: 100,
+      image: '../../../../../assets/images/magicSword.png',
+      attack: 70,
+      health: 0,
+    },
   ];
 
-  constructor(private inventoryService: InventoryService) {} // Видаліть конструктор
+  constructor(
+    private inventoryService: InventoryService,
+    private heroService: HeroService // Додайте сервіс героя
+  ) {}
 
-  // Попередній код isPlayerNearShop та openShopModal зберігається
-
-  buyItem(item: Item): void {
-    // Перевірка чи є достатньо коштів у гравця для покупки
-    if (this.hasEnoughMoney(item.price)) {
-      // Додавання товару до інвентарю
-      this.inventoryService.addItemToInventory(item);
-      // Видалення товару з магазину
+  buyItem(item: Item, hero: Hero): void {
+    if (this.hasEnoughMoney(hero.coins, item.price)) {
+      this.inventoryService.addItemFromShop(item);
       const index = this.shopItems.indexOf(item);
       if (index !== -1) {
         this.shopItems.splice(index, 1);
       }
-      // Вивід повідомлення про успішну покупку (можна видалити після тестування)
-      console.log(`You bought ${item.name}!`);
+      hero.coins -= item.price; 
+      hero.health += item.health;
+      hero.attack += item.attack;
     } else {
-      // Вивід повідомлення про недостатню кількість коштів (можна видалити після тестування)
-      console.log(`You don't have enough money to buy ${item.name}!`);
+      alert(`You don't have enough money to buy ${item.name}!`);
     }
   }
 
-  private hasEnoughMoney(price: number): boolean {
-    // Перевірка чи є достатньо коштів у гравця для покупки товару
-    // Цю логіку ви можете реалізувати за вашими потребами
-    return true; // Покищо повертаємо завжди true для тестування
+  private hasEnoughMoney(coins: number, price: number): boolean {
+    return coins >= price;
   }
 
   getShopItems(): Item[] {

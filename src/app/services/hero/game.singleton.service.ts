@@ -9,7 +9,7 @@ export class GameSingletonService {
   private hero: Hero;
 
   private constructor() {
-    this.hero = { name: '', health: 0, attack: 0, x: 0, y: 0};
+    this.hero = { coins:0, diamonds:0, name: '', health: 0, attack: 0, x: 0, y: 0, skills:[]};
   }
 
 

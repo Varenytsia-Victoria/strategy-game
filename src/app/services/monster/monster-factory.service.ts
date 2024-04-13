@@ -1,7 +1,7 @@
 // monster-factory.service.ts
 import { Injectable } from '@angular/core';
-import { Monster } from '../../models/monster';
-import { MonsterFlyweight } from '../../models/monster-flyweight.model';
+import { Monster } from '../../models/monster/monster';
+import { MonsterFlyweight } from '../../models/monster/monster-flyweight.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,17 +11,17 @@ export class MonsterFactoryService {
 
   constructor() {
     // Ініціалізуємо легковаговики монстрів
-    this.monsterFlyweights['goblin'] = {
-      name: 'Goblin',
+    this.monsterFlyweights['skeleton'] = {
+      name: 'Skeleton',
       image: '../../../assets/images/monster.png',
       attack: 10,
       health: 30,
     };
-    this.monsterFlyweights['orc'] = {
-      name: 'Orc',
-      image: '../../../assets/images/monster2.png',
+    this.monsterFlyweights['goblin'] = {
+      name: 'Goblin',
+      image: '../../../assets/images/monster_pink.png',
       attack: 40,
-      health: 20,
+      health: 0,
     };
     // Додайте інші легковаговики монстрів за потреби
   }

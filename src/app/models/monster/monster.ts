@@ -1,4 +1,4 @@
-import { MonsterFlyweight } from './monster-flyweight.model';
+import { MonsterFlyweight } from '../../models/monster/monster-flyweight.model';
 
 export class Monster {
   constructor(
@@ -6,7 +6,7 @@ export class Monster {
     public x: number,
     public y: number,
     public health: number, // Додайте властивість 'health'
-    public attack: number,
+    public attack: number
   ) {}
 
   getName(): string {
