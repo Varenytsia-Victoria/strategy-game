@@ -20,10 +20,10 @@ export class ShopService {
     },
     {
       name: 'Health Potion',
-      price: 20,
+      price: 30,
       image: '../../../../../assets/images/potion1.png ',
       attack: 0,
-      health: 50,
+      health: 100,
     },
     {
       name: 'Magic Staff',

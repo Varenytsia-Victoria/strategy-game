@@ -7,9 +7,13 @@ import { SkillTreeComponent } from './components/skill-tree/skill-tree.component
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MonsterComponent } from './components/monster/monster.component';
+import { MoneyComponent } from './components/money-earning/money.component';
+import { RouterModule } from '@angular/router'; // Додайте імпорт RouterModule
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
+    MoneyComponent,
     AppComponent, // Додайте AppComponent до декларацій
     GameComponent,
     InventoryComponent,
@@ -17,8 +21,9 @@ import { MonsterComponent } from './components/monster/monster.component';
     SkillTreeComponent,
     MonsterComponent,
   ],
-  imports: [CommonModule, BrowserModule],
+  imports: [CommonModule, BrowserModule,RouterModule.forRoot([]), AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
+   // Додайте AppRoutingModule
 })
 export class AppModule {}

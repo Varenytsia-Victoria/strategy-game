@@ -40,6 +40,7 @@ export class HeroService {
   moveDown(): void {
     this.hero.y += 10;
     this.heroSubject.next(this.hero);
+    
   }
 
   moveLeft(): void {

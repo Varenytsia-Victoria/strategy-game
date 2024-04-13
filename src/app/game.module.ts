@@ -4,9 +4,11 @@ import { GameComponent } from './components/game/game.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { SkillTreeComponent } from './components/skill-tree/skill-tree.component';
+import { MoneyComponent } from './components/money-earning/money.component';
 
 @NgModule({
   declarations: [
+    MoneyComponent,
     GameComponent,
     InventoryComponent,
     ShopComponent,

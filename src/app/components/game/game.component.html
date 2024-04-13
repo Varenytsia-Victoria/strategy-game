@@ -6,15 +6,18 @@
     <div>
       <h2>Hero Stats</h2>
       <p>Health: {{ hero.health }}</p>
-      <p>Attack: {{ hero.attack }}</p> <br>
+      <p>Attack: {{ hero.attack }}</p>
+      <br />
       <p>Coins: {{ hero.coins }}</p>
       <p>Diamonds: {{ hero.diamonds }}</p>
     </div>
 
+<button routerLink="/money">Earn money!</button>
 
     <app-inventory class="inventory"></app-inventory>
-<app-shop ></app-shop>
+    <app-shop></app-shop>
     <app-skill-tree></app-skill-tree>
+
   </div>
   <img
     src="../../../assets/images/player.png"

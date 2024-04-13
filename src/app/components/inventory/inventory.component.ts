@@ -9,6 +9,7 @@ import { Item } from '../../models/item';
 })
 export class InventoryComponent implements OnInit {
   items: Item[];
+  
 
   constructor(private inventoryService: InventoryService) {
     this.items = [];

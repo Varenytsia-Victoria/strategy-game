@@ -1,0 +1,22 @@
+<div>
+ <div class="game-content">
+    <div>
+      <h2>Level: {{ currentLevel }}</h2>
+    </div>
+    <div>
+      <h2>Hero Stats</h2>
+      <p>Health: {{ hero.health }}</p>
+      <p>Attack: {{ hero.attack }}</p>
+      <br />
+      <p>Coins: {{ hero.coins }}</p>
+      <p>Diamonds: {{ hero.diamonds }}</p>
+    </div>
+
+
+    <app-inventory class="inventory"></app-inventory>
+    <app-shop></app-shop>
+    <app-skill-tree></app-skill-tree>
+
+  </div>  <button routerLink="/">Let`s go to fight monsters!</button>
+
+</div>
