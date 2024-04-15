@@ -1,9 +1,14 @@
-<div class="skill-tree-container">
-  <h2>Skill Tree</h2>
-  <ul>
-    <li *ngFor="let skill of skills">
-      {{ skill.name }} - Level: {{ skill.level }}
-      <button (click)="buySkill(skill)">Upgrade</button>
-    </li>
-  </ul>
+<button class="button" (click)="openSkillsModal()">Skills</button>
+
+<div id="skillsModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close" (click)="closeSkillsModal()">&times;</span>
+    <h2>Skills</h2>
+    <ul>
+      <li *ngFor="let skill of skills">
+       {{skill.level}}-{{ skill.name }}
+        <button class="buy-btn" (click)="buySkill(skill)">Buy</button>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -26,7 +26,7 @@ export class ShopComponent implements OnInit {
       attack: 0,
       x: 0,
       y: 0,
-      skills:[]
+      skills: [],
     }; // Ініціалізуйте об'єкт героя
   }
 
@@ -39,5 +39,18 @@ export class ShopComponent implements OnInit {
 
   buyItem(item: Item): void {
     this.shopService.buyItem(item, this.hero); // Передайте об'єкт героя у метод buyItem
+  }
+
+  openShopModal(): void {
+    const shopModal = document.getElementById('shopModal');
+    if (shopModal) {
+      shopModal.style.display = 'block';
+    }
+  }
+  closeShopModal(): void {
+    const shopModal = document.getElementById('shopModal');
+    if (shopModal) {
+      shopModal.style.display = 'none';
+    }
   }
 }

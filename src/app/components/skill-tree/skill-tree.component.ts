@@ -27,7 +27,7 @@ export class SkillTreeComponent implements OnInit {
       x: 0,
       y: 0,
 
-      skills: []
+      skills: [],
     }; // Initialize the hero object
   }
 
@@ -52,5 +52,19 @@ export class SkillTreeComponent implements OnInit {
     this.skillService.upgradeSkill(skill);
     // Update the display of skills after upgrade
     this.updateSkillTree();
+  }
+
+  openSkillsModal(): void {
+    const skillsModal = document.getElementById('skillsModal');
+    if (skillsModal) {
+      skillsModal.style.display = 'block';
+    }
+  }
+
+  closeSkillsModal(): void {
+    const skillsModal = document.getElementById('skillsModal');
+    if (skillsModal) {
+      skillsModal.style.display = 'none';
+    }
   }
 }

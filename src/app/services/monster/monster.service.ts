@@ -12,16 +12,16 @@ export class MonsterService {
   constructor(private monsterFactory: MonsterFactoryService) {
     // Генеруємо 5 монстрів гоблінів та 5 монстрів орків
     for (let i = 0; i < 5; i++) {
-      const x = Math.random() * 1500 + 50; // Випадкові координати в межах екрану
-      const y = Math.random() * 400 + 220;
+      const x = Math.random() * 1100 + 50; // Випадкові координати в межах екрану
+      const y = Math.random() * 250 + 220;
       // Створюємо монстра з використанням фабрики
       const monster = this.monsterFactory.createMonster('goblin', x, y); // Приклад використання типу 'goblin'
       this.monsters.push(monster);
     }
 
     for (let i = 0; i < 5; i++) {
-      const x = Math.random() * 1500+50; // Випадкові координати в межах екрану
-      const y = Math.random() * 400 + 210;
+      const x = Math.random() * 1100+50; // Випадкові координати в межах екрану
+      const y = Math.random() * 250 + 210;
       // Створюємо монстра з використанням фабрики
       const monster = this.monsterFactory.createMonster('skeleton', x, y); // Приклад використання типу 'orc'
       this.monsters.push(monster);

@@ -16,7 +16,8 @@ import { MoneyComponent } from './components/money-earning/money.component';
   ],
   imports: [CommonModule],
   exports: [
-    GameComponent, // Якщо вам потрібно експортувати GameComponent для використання у інших модулях
+    GameComponent,
+    InventoryComponent, // Якщо вам потрібно експортувати GameComponent для використання у інших модулях
   ],
 })
 export class GameModule {}

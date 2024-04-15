@@ -1,24 +1,28 @@
 <div class="game-container">
   <div class="game-content">
-    <div>
-      <h2>Level: {{ currentLevel }}</h2>
-    </div>
-    <div>
-      <h2>Hero Stats</h2>
-      <p>Health: {{ hero.health }}</p>
-      <p>Attack: {{ hero.attack }}</p>
-      <br />
-      <p>Coins: {{ hero.coins }}</p>
-      <p>Diamonds: {{ hero.diamonds }}</p>
-    </div>
+    <img id="hero-bar" src="../assets/images/hero-bar.png" alt="" />
+<h2 id="level">{{ currentLevel }}</h2>
+    <div class="hero-stats">
+      
 
-<button routerLink="/money">Earn money!</button>
+      <p id="level-sign">Level</p>
+      <div class="stats">
+      <p id="health">{{ hero.health }}</p>
+      <p>{{ hero.attack }}</p>
+      
+      <p>{{ hero.coins }}</p>
+      <p>{{ hero.diamonds }}</p>
+    </div></div>
+
 
     <app-inventory class="inventory"></app-inventory>
     <app-shop></app-shop>
     <app-skill-tree></app-skill-tree>
+    <button routerLink="/money">Earn money!</button>
 
   </div>
+  <img id="inventory" src="../assets/images/inventory.png" alt="" />
+
   <img
     src="../../../assets/images/player.png"
     alt="Hero"

@@ -1,8 +1,7 @@
 <div class="inventory-container">
-  <h2>Inventory</h2>
-  <ul>
-    <li *ngFor="let item of items">
-      {{ item.name }}
-    </li>
-  </ul>
+  <div class="inventory-grid">
+    <div *ngFor="let item of items" class="inventory-item">
+      <img [src]="item.image" alt="{{ item.name }}">
+    </div>
+  </div>
 </div>

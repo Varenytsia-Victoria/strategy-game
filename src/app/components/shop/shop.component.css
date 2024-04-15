@@ -14,18 +14,38 @@ li {
   margin-bottom: 10px;
 }
 
-button {
-  padding: 5px 10px;
-  background-color: #4caf50;
-  color: #fff;
+.button {
+  background: none;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  background-image: url(../../../assets/images/button.png);
+  background-repeat: no-repeat;
+  width: 261px;
+  height: 100px;
+  padding-inline: 5.93rem;
+  font-size: 30px;
+  color: #f7d89e;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 280px;
 }
 
+.buy-btn {
+  background: none;
+  border: none;
+  position: relative;
+  padding: 10px;
 
+  padding-inline: 2.2rem;
+
+  background-repeat: no-repeat;
+
+  background-image: url(../../../assets/images/small-btn.png);
+}
 
 .modal {
+  color:#532301 ;
+
   display: none; /* Початково приховуємо модальне вікно */
   position: fixed; /* Залишаємо на місці */
   z-index: 10; /* Поверх інших елементів */
@@ -38,7 +58,7 @@ button {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #fed385;
   margin: 15% auto; /* 15% від верху та по центру */
   padding: 20px;
   border: 1px solid #888;
