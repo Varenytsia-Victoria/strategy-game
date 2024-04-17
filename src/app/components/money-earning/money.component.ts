@@ -20,12 +20,12 @@ export class MoneyComponent implements OnInit {
     x: 0,
     y: 0,
     skills: [],
-  }; // Початкові значення для героя
-  gameOver: boolean = false; // Додайте змінну, яка відслідковує, чи гра завершилася
+  }; 
+  gameOver: boolean = false; 
 
   constructor(
     private heroService: HeroService,
-    private coinService: CoinService // Внесення змін до імені сервісу: coinService
+    private coinService: CoinService 
   ) {
     this.currentLevel = 1;
   }
@@ -69,6 +69,6 @@ export class MoneyComponent implements OnInit {
   }
 
   closeModal(): void {
-    this.gameOver = false; // Закриття модального вікна
+    this.gameOver = false; 
   }
 }

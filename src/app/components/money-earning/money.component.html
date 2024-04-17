@@ -1,36 +1,35 @@
 <div class="game-background">
   < class="game-content">
-    <img id="hero-bar" src="../assets/images/hero-bar.png" alt="" />
-    <h2 id="level">{{ currentLevel }}</h2>
-    <div class="hero-stats">
-      <p id="level-sign">Level</p>
-      <div class="stats">
-        <p id="health">{{ hero.health }}</p>
-        <p>{{ hero.attack }}</p>
+  <img id="hero-bar" src="../assets/images/hero-bar.png" alt="" />
+  <h2 id="level">{{ currentLevel }}</h2>
+  <div class="hero-stats">
+    <p id="level-sign">Level</p>
+    <div class="stats">
+      <p id="health">{{ hero.health }}</p>
+      <p>{{ hero.attack }}</p>
 
-        <p>{{ hero.coins }}</p>
-        <p>{{ hero.diamonds }}</p>
-      </div>
+      <p>{{ hero.coins }}</p>
+      <p>{{ hero.diamonds }}</p>
     </div>
-
-     <app-shop></app-shop>
-    <app-skill-tree></app-skill-tree>
-
-
-    <img id="inventory" src="../assets/images/inventory.png" alt="" />
-    <button routerLink="/">
-      Let`s go to <br />
-      fight monsters!
-    </button>
-        <app-inventory class="inventory"></app-inventory>
-<app-coin></app-coin>
-
-    <img
-      src="../../../assets/images/player.png"
-      alt="Hero"
-      class="hero"
-      [style.left.px]="hero.x"
-      [style.top.px]="hero.y"
-    />
   </div>
+  <button routerLink="/">
+    Let`s go to <br />
+    fight monsters!
+  </button>
+  <app-shop></app-shop>
+  <app-skill-tree></app-skill-tree>
 
+  <div class="inventory-div">
+    <app-inventory class="inventory"></app-inventory> </div>
+    <img id="inventory" src="../assets/images/inventory.png" alt="" />
+ 
+  <app-coin></app-coin>
+
+  <img
+    src="../../../assets/images/player.png"
+    alt="Hero"
+    class="hero"
+    [style.left.px]="hero.x"
+    [style.top.px]="hero.y"
+  />
+</div>

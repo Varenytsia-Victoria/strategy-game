@@ -4,7 +4,6 @@ import { HeroService } from '../../services/hero/hero.service';
 import { Hero } from '../../models/hero';
 import { Monster } from '../../models/monster/monster';
 import { MonsterService } from '../../services/monster/monster.service';
-//import { ShopService } from '../../services/shop/shop.service';
 
 @Component({
   selector: 'app-game',
@@ -13,14 +12,13 @@ import { MonsterService } from '../../services/monster/monster.service';
 })
 export class GameComponent implements OnInit {
   currentLevel: number;
-  hero: Hero = { coins:0, diamonds:0, name: '', health: 100, attack: 10, x: 0, y: 0, skills:[] }; // Початкові значення для героя
+  hero: Hero = { coins:0, diamonds:0, name: '', health: 100, attack: 10, x: 0, y: 0, skills:[] }; 
   monsters: Monster[] = [];
-  gameOver: boolean = false; // Додайте змінну, яка відслідковує, чи гра завершилася
+  gameOver: boolean = false; 
 
   constructor(
     private heroService: HeroService,
     private monsterService: MonsterService,
-   // private shopService: ShopService // Додайте сервіс магазину тут
   ) {
     this.currentLevel = 1;
   }
@@ -44,7 +42,6 @@ export class GameComponent implements OnInit {
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (!this.gameOver) {
-      // Перевірте, чи гра не завершилася
       switch (event.key) {
         case 'w':
           this.heroService.moveUp();
@@ -63,7 +60,6 @@ export class GameComponent implements OnInit {
           break;
       }
 
-      // Перевірте, чи гравець наближається до магазину
     }
   }
 
@@ -85,29 +81,26 @@ export class GameComponent implements OnInit {
   }
 
   isHeroCloseToMonster(monster: Monster): boolean {
-    // Перевірка за відстанню між героєм і монстром
     const distance = Math.sqrt(
       Math.pow(this.hero.x - monster.x, 2) +
         Math.pow(this.hero.y - monster.y, 2)
     );
-    return distance < 50; // Припустимо, що монстр атакує, якщо відстань між ним і героєм менше 50
+    return distance < 50; 
   }
 
   handleDefeat(): void {
-    // Дії, які відбуваються при поразці героя
-    this.gameOver = true; // Встановлюємо gameOver в true
+    this.gameOver = true; 
     console.log('gameOver');
   }
 
   handleMonsterDefeat(monster: Monster): void {
-    // Дії, які відбуваються при поразці монстра
     const index = this.monsters.indexOf(monster);
     if (index !== -1) {
-      this.monsters.splice(index, 1); // Видалення монстра зі списку
+      this.monsters.splice(index, 1); 
     }
   }
 
   closeModal(): void {
-    this.gameOver = false; // Закриття модального вікна
+    this.gameOver = false; 
   }
 }

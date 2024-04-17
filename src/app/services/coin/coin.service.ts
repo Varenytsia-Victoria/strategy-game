@@ -9,7 +9,7 @@ import { HeroService } from '.././hero/hero.service';
   providedIn: 'root',
 })
 export class CoinService {
-  coins: Coin[] = []; // Зберігаємо монети тут
+  coins: Coin[] = []; 
 
   constructor(private heroService: HeroService) {}
 
@@ -34,7 +34,7 @@ export class CoinService {
       coins.push(coin);
     }
 
-    this.coins = coins; // Зберігаємо створені монети у властивості coins
+    this.coins = coins; 
 
     return coins;
   }
@@ -48,15 +48,52 @@ export class CoinService {
       const distance = Math.sqrt(
         Math.pow(playerX - coin.x, 2) + Math.pow(playerY - coin.y, 2)
       );
+
       if (distance < 50) {
         if (coin.type === 'diamond') {
           hero.diamonds++;
+          this.breakDiamond(coin as Diamond);
         } else if (coin.type === 'gold') {
           hero.coins += 20;
+          this.breakCoin(coin as GoldCoin);
+
         }
-        this.coins.splice(i, 1); // Видаляємо монету зі списку
+
+        this.coins.splice(i, 1); 
         i--;
       }
     }
+  }
+
+  breakDiamond(diamond: Diamond): void {
+    diamond.destroy();
+
+    const DiamondImage = new Image();
+    DiamondImage.src = '../../../assets/images/diamond.png'; 
+    DiamondImage.style.position = 'absolute';
+    DiamondImage.style.left = diamond.x + 20 + 'px';
+    DiamondImage.style.top = diamond.y + 'px';
+
+    document.body.appendChild(DiamondImage);
+
+    setTimeout(() => {
+      DiamondImage.remove();
+    }, 1000); 
+  }
+
+  breakCoin(coin: GoldCoin): void {
+    coin.destroy();
+
+    const CoinImage = new Image();
+    CoinImage.src = '../../../assets/images/coin.png'; 
+    CoinImage.style.position = 'absolute';
+    CoinImage.style.left = coin.x + 20 + 'px';
+    CoinImage.style.top = coin.y + 'px';
+
+    document.body.appendChild(CoinImage);
+
+    setTimeout(() => {
+      CoinImage.remove();
+    }, 1000); 
   }
 }

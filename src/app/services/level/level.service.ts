@@ -17,6 +17,5 @@ export class LevelService {
   }
 
   start(): void {
-    // Implement logic for starting the game level
   }
 }

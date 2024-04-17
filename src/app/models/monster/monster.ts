@@ -5,7 +5,7 @@ export class Monster {
     private flyweight: MonsterFlyweight,
     public x: number,
     public y: number,
-    public health: number, // Додайте властивість 'health'
+    public health: number, 
     public attack: number
   ) {}
 

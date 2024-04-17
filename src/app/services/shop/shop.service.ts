@@ -36,7 +36,7 @@ export class ShopService {
 
   constructor(
     private inventoryService: InventoryService,
-    private heroService: HeroService // Додайте сервіс героя
+    private heroService: HeroService 
   ) {}
 
   buyItem(item: Item, hero: Hero): void {

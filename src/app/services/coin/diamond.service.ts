@@ -2,7 +2,7 @@ import { Coin } from '../../models/coin';
 
 export class Diamond extends Coin {
   constructor(x:number, y:number) {
-    super('diamond', '../../../assets/images/stone.png', x, y); // Передайте всі необхідні аргументи до батьківського конструктора
+    super('diamond', '../../../assets/images/stone.png', x, y); 
     this.addType();
     this.addDesign();
   }

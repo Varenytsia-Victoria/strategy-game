@@ -23,9 +23,7 @@ export class GameFacadeService {
   }
 
   endGame(): void {
-    // Завершення гри: видалення героя, монстрів та інших об'єктів гри
-    //this.heroService.deleteHero();
-    //this.monsterService.deleteMonsters();
+    
   }
 
   private showWelcomeModal(): void {

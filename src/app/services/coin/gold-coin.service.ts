@@ -2,7 +2,7 @@ import { Coin } from '../../models/coin';
 
 export class GoldCoin extends Coin {
   constructor(x: number, y: number) {
-    super('gold', '../../../assets/images/stone.png', x, y); // Передайте всі необхідні аргументи до батьківського конструктора
+    super('gold', '../../../assets/images/stone.png', x, y); 
     this.addType();
     this.addDesign();
   }
@@ -15,7 +15,7 @@ export class GoldCoin extends Coin {
   }
 
   removeCoin(): void {
-   this.x = -1000; // Поза межами екрану, можна також встановити яку завгодно координату, щоб монета більше не відображалась
-   this.y = -1000;
+    this.type = '';
+    this.image = '';
   }
 }

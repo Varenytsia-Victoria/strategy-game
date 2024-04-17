@@ -58,29 +58,29 @@ li {
 .modal {
   color: #532301;
 
-  display: none; /* Початково приховуємо модальне вікно */
-  position: fixed; /* Залишаємо на місці */
-  z-index: 10; /* Поверх інших елементів */
+  display: none; 
+  position: fixed; 
+  z-index: 10; 
   left: 0;
   top: 0;
-  width: 100%; /* Повна ширина */
-  height: 100%; /* Повна висота */
-  overflow: auto; /* Дозволяємо прокрутку, якщо потрібно */
-  background-color: rgba(0, 0, 0, 0.4); /* Чорний з прозорістю */
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4); 
 }
 
 .modal-content {
   background-color: #f7d89e;
-  margin: 15% auto; /* 15% від верху та по центру */
+  margin: 15% auto; 
   padding: 20px;
   border: 1px solid #888;
-  width: 30%; /* Може бути більше або менше, в залежності від розміру екрана */
+  width: 30%;
 }
 
 .modal-content {
   font-size: 30px;
   background-color: #fed385;
-  margin: 15% auto; /* 15% від верху та по центру */
+  margin: 15% auto; 
   padding: 2rem;
   border: 1px solid #888;
   width: 30%;
@@ -90,7 +90,6 @@ li {
   flex-direction: row;
   justify-content: center;
 }
-/* Клас show використовується для показу модального вікна */
 .show {
   display: block;
 }

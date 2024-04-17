@@ -78,10 +78,16 @@ button {
   left: 1rem;
 }
 
+.inventory-div{
+  display: flex;
+justify-content: center;
+position: absolute;
+left:25rem;
+
+}
 #inventory {
   display: flex;
   justify-content: center;
-  align-items: end;
   position: absolute;
   bottom: -20px;
   left: 25rem;
@@ -95,3 +101,4 @@ button {
   width: 1515px;
   background-repeat: no-repeat;
 }
+

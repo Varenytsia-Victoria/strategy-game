@@ -10,7 +10,6 @@ export class MonsterFactoryService {
   private monsterFlyweights: { [key: string]: MonsterFlyweight } = {};
 
   constructor() {
-    // Ініціалізуємо легковаговики монстрів
     this.monsterFlyweights['skeleton'] = {
       name: 'Skeleton',
       image: '../../../assets/images/monster.png',
@@ -23,7 +22,6 @@ export class MonsterFactoryService {
       attack: 40,
       health: 0,
     };
-    // Додайте інші легковаговики монстрів за потреби
   }
 
   createMonster(type: string, x: number, y: number): Monster {
@@ -35,8 +33,8 @@ export class MonsterFactoryService {
       flyweight,
       x,
       y,
-      0, // Початкова швидкість може бути 0
-      flyweight.health // Початкове здоров'я монстра з легковаговика
+      0, 
+      flyweight.health 
     );
   }
 }

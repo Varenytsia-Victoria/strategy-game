@@ -10,11 +10,11 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 export class ShopComponent implements OnInit {
   items: Item[];
-  hero: Hero; // Додайте змінну для збереження об'єкта героя
+  hero: Hero; 
 
   constructor(
     private shopService: ShopService,
-    private heroService: HeroService // Додайте HeroService до конструктора
+    private heroService: HeroService 
   ) {
     this.items = [];
     this.hero = {
@@ -26,18 +26,18 @@ export class ShopComponent implements OnInit {
       x: 0,
       y: 0,
       skills: [],
-    }; // Ініціалізуйте об'єкт героя
+    }; 
   }
 
   ngOnInit(): void {
     this.items = this.shopService.getShopItems();
     this.heroService.getHero().subscribe((hero) => {
-      this.hero = hero; // Збережіть дані про героя в змінній hero
+      this.hero = hero; 
     });
   }
 
   buyItem(item: Item): void {
-    this.shopService.buyItem(item, this.hero); // Передайте об'єкт героя у метод buyItem
+    this.shopService.buyItem(item, this.hero); 
   }
 
   openShopModal(): void {

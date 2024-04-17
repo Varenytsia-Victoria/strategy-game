@@ -4,13 +4,11 @@ export abstract class Coin {
   x: number;
   y: number;
 
-  // Шаблонний метод
   create(): void {
     this.addType();
     this.addDesign();
   }
 
-  // Шаблонний метод
   destroy(): void {
     this.removeCoin();
   }

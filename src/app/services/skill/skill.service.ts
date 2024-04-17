@@ -24,11 +24,8 @@ export class SkillService {
   }
 
   buySkill(skill: Skill, hero: Hero): void {
-    // Check if the hero has enough diamonds to buy the skill
     if (hero.diamonds > 0) {
-      // Check if the skill level is less than 5
       if (skill.level < 5) {
-        // Increase the skill level and decrease the hero's diamonds count
         skill.level++;
         hero.diamonds--;
         console.log(`Skill ${skill.name} purchased. New level: ${skill.level}`);
@@ -41,7 +38,6 @@ export class SkillService {
   }
 
   upgradeSkill(skill: Skill): void {
-    // Implement logic for upgrading a skill
     console.log(`Upgraded skill: ${skill.name}`);
   }
 }

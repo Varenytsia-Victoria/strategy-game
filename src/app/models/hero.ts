@@ -8,5 +8,4 @@ export interface Hero {
   y:number;
 
 skills: string[];
-  // Add more properties as needed, such as abilities, mana, etc.
 }

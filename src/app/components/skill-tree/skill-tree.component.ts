@@ -28,7 +28,7 @@ export class SkillTreeComponent implements OnInit {
       y: 0,
 
       skills: [],
-    }; // Initialize the hero object
+    }; 
   }
 
   ngOnInit(): void {
@@ -43,14 +43,12 @@ export class SkillTreeComponent implements OnInit {
   }
 
   buySkill(skill: Skill): void {
-    this.skillService.buySkill(skill, this.hero); // Pass the hero object correctly
-    // Update the display of skills after purchase
+    this.skillService.buySkill(skill, this.hero); 
     this.updateSkillTree();
   }
 
   upgradeSkill(skill: Skill): void {
     this.skillService.upgradeSkill(skill);
-    // Update the display of skills after upgrade
     this.updateSkillTree();
   }
 
