@@ -7,7 +7,7 @@ import { Monster } from '../../models/monster/monster';
   styleUrls: ['./monster.component.css'],
 })
 export class MonsterComponent {
-  @Input() monster: Monster[] = []; // Зверніть увагу, що тепер це масив монстрів
+  @Input() monster: Monster[] = []; 
 
   constructor() {}
 }

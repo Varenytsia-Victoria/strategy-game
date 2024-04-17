@@ -10,10 +10,10 @@ import { MonsterComponent } from './components/monster/monster.component';
 import { MoneyComponent } from './components/money-earning/money.component';
 import { RouterModule } from '@angular/router'; // Додайте імпорт RouterModule
 import { AppRoutingModule } from './app-routing.module';
-
 @NgModule({
   declarations: [
     MoneyComponent,
+    CoinsComponent,
     AppComponent, // Додайте AppComponent до декларацій
     GameComponent,
     InventoryComponent,
@@ -26,4 +26,5 @@ import { AppRoutingModule } from './app-routing.module';
   bootstrap: [AppComponent],
    // Додайте AppRoutingModule
 })
-export class AppModule {}
+export class AppModule {}import { CoinsComponent } from './components/money-earning/coin/coin.component';
+

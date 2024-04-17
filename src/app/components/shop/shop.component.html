@@ -7,7 +7,7 @@
     <h2>Shop</h2>
     <ul>
       <li *ngFor="let item of items">
-        {{ item.name }} - {{ item.price }}
+        {{ item.name }} <br> {{ item.price }} <br>
         <button class="buy-btn" (click)="buyItem(item)">Buy</button>
       </li>
     </ul>

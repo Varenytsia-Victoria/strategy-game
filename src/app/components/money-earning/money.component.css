@@ -14,70 +14,68 @@
   padding-top: 2rem;
 }
 
-#hero-bar{
-  margin: -1rem;
+#hero-bar {
   width: 400px;
   position: absolute;
-  right: 0.5rem;
+  right: -0.5rem;
+  top: 5px;
 }
 
-.hero-stats{
+.hero-stats {
   z-index: 18;
   font-size: 20px;
-position: absolute;
-right: 9.5rem;
+  position: absolute;
+  right: 9.5rem;
 }
 
-#level{
+#level {
   font-size: 70px;
   font-weight: 900;
   z-index: 20;
   position: absolute;
-right: 20.8rem;
-top:0.7rem;
-color:#532301 ;
+  right: 20.8rem;
+  top: 0.7rem;
+  color: #532301;
 }
 
-#level-sign{
+#level-sign {
   font-size: 50px;
   font-weight: 600;
   z-index: 20;
   position: relative;
   left: 1rem;
-  color:#532301 ;
-
+  color: #532301;
 }
 
-.stats{
+.stats {
   font-size: 40px;
   z-index: 20;
   position: relative;
   left: 1.45rem;
-  top:25px;
-  color:#532301 ;
-
+  top: 25px;
+  color: #532301;
 }
 
-.stats>p{
-  letter-spacing:9px;
-    font-weight: 600;
-padding-bottom: 12px;
+.stats > p {
+  letter-spacing: 9px;
+  font-weight: 600;
+  padding-bottom: 12px;
 }
-button{
+button {
   background: none;
-  border:none;
+  border: none;
   background-image: url(../../../assets/images/button.png);
-background-repeat: no-repeat;
-width: 261!important;
-height: 100px;
-padding-inline: 1rem;
-font-size: 30px;
-color: #f7d89e;
-display: flex;
-align-items: center;
-justify-self: center;
-position: absolute;
-left: 1rem;
+  background-repeat: no-repeat;
+  width: 261 !important;
+  height: 100px;
+  padding-inline: 1rem;
+  font-size: 30px;
+  color: #f7d89e;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: absolute;
+  left: 1rem;
 }
 
 #inventory {
@@ -95,6 +93,5 @@ left: 1rem;
   margin: -1.2rem;
   height: 700px;
   width: 1515px;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
-

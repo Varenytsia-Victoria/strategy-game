@@ -58,13 +58,20 @@ li {
 }
 
 .modal-content {
+  font-size: 30px;
   background-color: #fed385;
   margin: 15% auto; /* 15% від верху та по центру */
-  padding: 20px;
+  padding: 2rem;
   border: 1px solid #888;
-  width: 30%; /* Може бути більше або менше, в залежності від розміру екрана */
-}
+  width: 30%;
 
+}
+.modal-content>ul{
+  display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+}
 /* Клас show використовується для показу модального вікна */
 .show {
   display: block;

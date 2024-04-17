@@ -131,3 +131,20 @@ justify-self: center;
 position: absolute;
 left: 1rem;
 }
+
+.game-over{
+  
+
+}
+
+.game-over-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color:#532301 ;
+background-color: #f7d89e;
+font-size: 70px;
+height: 100px;
+}

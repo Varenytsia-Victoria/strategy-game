@@ -3,7 +3,6 @@ import { ShopService } from '../../services/shop/shop.service';
 import { Item } from '../../models/item';
 import { Hero } from '../../models/hero';
 import { HeroService } from '../../services/hero/hero.service';
-
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',

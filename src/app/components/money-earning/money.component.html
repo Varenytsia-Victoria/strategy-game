@@ -1,5 +1,5 @@
 <div class="game-background">
-  <div class="game-content">
+  < class="game-content">
     <img id="hero-bar" src="../assets/images/hero-bar.png" alt="" />
     <h2 id="level">{{ currentLevel }}</h2>
     <div class="hero-stats">
@@ -13,15 +13,17 @@
       </div>
     </div>
 
-    <app-inventory class="inventory"></app-inventory>
-    <app-shop></app-shop>
+     <app-shop></app-shop>
     <app-skill-tree></app-skill-tree>
+
 
     <img id="inventory" src="../assets/images/inventory.png" alt="" />
     <button routerLink="/">
       Let`s go to <br />
       fight monsters!
     </button>
+        <app-inventory class="inventory"></app-inventory>
+<app-coin></app-coin>
 
     <img
       src="../../../assets/images/player.png"
@@ -31,4 +33,4 @@
       [style.top.px]="hero.y"
     />
   </div>
-</div>
+

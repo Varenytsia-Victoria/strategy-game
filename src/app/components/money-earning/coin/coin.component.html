@@ -1,0 +1,8 @@
+<div
+  *ngFor="let coin of coins"
+  class="coin"
+  [style.left.px]="coin.x"
+  [style.top.px]="coin.y"
+>
+  <img [src]="coin.image" alt="Coin" />
+</div>

@@ -12,7 +12,7 @@ export class ShopService {
   private shopY: number = 100;
   private shopItems: Item[] = [
     {
-      name: 'Sword',
+      name: 'Iron Sword',
       price: 50,
       image: '../../../../../assets/images/commonSword.png ',
       attack: 30,
