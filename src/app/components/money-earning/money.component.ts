@@ -59,13 +59,13 @@ export class MoneyComponent implements OnInit {
       case 'd':
         this.heroService.moveRight();
         break;
-        case ' ':
-          this.collectCoins();
+      case ' ':
+        this.collectCoins();
     }
   }
 
   collectCoins(): void {
-    this.coinService.collectCoins(this.hero); // Передача героя та його кількості монет
+    this.coinService.collectCoins(this.hero.x, this.hero.y, this.hero);
   }
 
   closeModal(): void {

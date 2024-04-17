@@ -26,7 +26,6 @@ export class CoinsComponent implements OnInit, OnDestroy {
       .getHero()
       .subscribe((hero: Hero) => {
         this.hero = hero;
-        // Перевірка, чи монети ще не створені
         if (this.coins.length === 0) {
           this.generateCoins();
         }
@@ -38,13 +37,12 @@ export class CoinsComponent implements OnInit, OnDestroy {
       this.heroSubscription.unsubscribe();
     }
   }
-
-  generateCoins(): void {
-    this.coins = this.сoinService.generateCoins(10);
+  collectCoins(): void {
+    this.сoinService.collectCoins(this.hero.x, this.hero.y, this.hero);
   }
 
-  collectCoins(): void {
-    this.сoinService.collectCoins(this.hero); // Збираємо монети
-    this.coins = this.сoinService.getCoins(); // Оновлюємо список монет після збору
+  generateCoins(): void {
+    this.сoinService.generateCoins(10);
+    this.coins = this.сoinService.getCoins();
   }
 }

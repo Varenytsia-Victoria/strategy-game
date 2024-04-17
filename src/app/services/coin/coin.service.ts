@@ -12,11 +12,12 @@ export class CoinService {
   coins: Coin[] = []; // Зберігаємо монети тут
 
   constructor(private heroService: HeroService) {}
+
   getCoins(): Coin[] {
     return this.coins;
   }
+
   generateCoins(numCoins: number): Coin[] {
-    // Змінено тип повернення на Coin[]
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
     const coins: Coin[] = [];
@@ -33,12 +34,14 @@ export class CoinService {
       coins.push(coin);
     }
 
-    return coins; // Повертаємо масив монет
+    this.coins = coins; // Зберігаємо створені монети у властивості coins
+
+    return coins;
   }
 
-  collectCoins(hero: Hero): void {
-    const playerX = hero.x;
-    const playerY = hero.y;
+  collectCoins(heroX: number, heroY: number, hero: Hero): void {
+    const playerX = heroX;
+    const playerY = heroY;
 
     for (let i = 0; i < this.coins.length; i++) {
       const coin = this.coins[i];
@@ -51,7 +54,7 @@ export class CoinService {
         } else if (coin.type === 'gold') {
           hero.coins += 20;
         }
-        this.coins.splice(i, 1); // Видалення монети зі списку
+        this.coins.splice(i, 1); // Видаляємо монету зі списку
         i--;
       }
     }
