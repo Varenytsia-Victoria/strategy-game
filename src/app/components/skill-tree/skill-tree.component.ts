@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { SkillService } from '../../services/skill/skill.service';
 import { Skill } from '../../models/skill/skill';
 import { Hero } from '../../models/hero';
@@ -28,7 +28,7 @@ export class SkillTreeComponent implements OnInit {
       y: 0,
 
       skills: [],
-    }; 
+    };
   }
 
   ngOnInit(): void {
@@ -43,7 +43,7 @@ export class SkillTreeComponent implements OnInit {
   }
 
   buySkill(skill: Skill): void {
-    this.skillService.buySkill(skill, this.hero); 
+    this.skillService.buySkill(skill, this.hero);
     this.updateSkillTree();
   }
 
@@ -58,7 +58,12 @@ export class SkillTreeComponent implements OnInit {
       skillsModal.style.display = 'block';
     }
   }
-
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'q') {
+      this.closeSkillsModal();
+    }
+  }
   closeSkillsModal(): void {
     const skillsModal = document.getElementById('skillsModal');
     if (skillsModal) {

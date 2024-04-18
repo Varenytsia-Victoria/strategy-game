@@ -1,13 +1,15 @@
-// monster-battle.strategy.ts
 import { Injectable } from '@angular/core';
 import { Monster } from '../../models/monster/monster';
 import { Hero } from '../../models/hero';
 import { BattleStrategy } from './strategy.interface';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MonsterBattleStrategy implements BattleStrategy {
+  gameOver: Subject<boolean> = new Subject<boolean>(); 
+
   constructor() {}
 
   execute(hero: Hero, monsters: Monster[]): void {
@@ -18,7 +20,7 @@ export class MonsterBattleStrategy implements BattleStrategy {
 
         if (hero.health <= 0) {
           this.handleDefeat();
-          return; // Зупиняємо бійку, якщо гравець програв
+          return;
         }
 
         if (monster.health <= 0) {
@@ -37,6 +39,7 @@ export class MonsterBattleStrategy implements BattleStrategy {
 
   handleDefeat(): void {
     console.log('Game Over');
+    this.gameOver.next(true); 
   }
 
   handleMonsterDefeat(monster: Monster, monsters: Monster[]): void {

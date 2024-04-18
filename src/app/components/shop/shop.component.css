@@ -13,7 +13,15 @@ ul {
 li {
   margin-bottom: 10px;
 }
-
+#close-modal{
+  font-size: 18px;
+}
+h2{
+    color: #0c3c16;
+display: flex;
+justify-content: center;
+padding-bottom: 10px;
+}
 .button {
   background: none;
   border: none;

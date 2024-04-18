@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router'; // Додайте імпорт R
 import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
+    
     MoneyComponent,
     CoinsComponent,
     AppComponent, // Додайте AppComponent до декларацій

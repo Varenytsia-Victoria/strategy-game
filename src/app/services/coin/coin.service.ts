@@ -18,8 +18,7 @@ export class CoinService {
   }
 
   generateCoins(numCoins: number): Coin[] {
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
+    
     const coins: Coin[] = [];
 
     for (let i = 0; i < numCoins; i++) {

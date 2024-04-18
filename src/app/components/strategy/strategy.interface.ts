@@ -8,3 +8,5 @@ export interface GameStrategy {
 export interface BattleStrategy {
   execute(hero: Hero, monsters: Monster[]): void;
 }
+
+

@@ -13,9 +13,18 @@
   flex-direction: row-reverse;
 }
 
-
-
-#inventory{
+.herobar-imgs {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 2rem;
+  top: 7rem;
+  gap: 2rem;
+}
+.herobar-imgs > img {
+  width: 30px;
+}
+#inventory {
   display: flex;
   justify-content: center;
   align-items: end;
@@ -28,7 +37,7 @@
 .modal {
   display: none; /* Початково приховане */
   position: fixed; /* Закріплене на місці */
-  z-index: 100; /* Поверх інших елементів */
+  z-index: 1000; /* Поверх інших елементів */
   left: 0;
   top: 0;
   width: 100%; /* Повна ширина */
@@ -38,19 +47,19 @@
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #f7d89e;
   margin: 15% auto; /* 15% від верху та по центру */
   padding: 20px;
-  border: 1px solid #888;
   width: 30%; /* Може бути більше або менше, залежно від розміру екрану */
 }
 
 /* Close Button */
 .close {
-  color: #aaa;
+  color: #532301;
   float: right;
-  font-size: 28px;
+  font-size: 35px;
   font-weight: bold;
+
 }
 
 .close:hover,
@@ -64,87 +73,148 @@
   display: block; /* Показувати вікно, якщо клас 'show' встановлено */
 }
 
-
-#hero-bar{
+#hero-bar {
   margin: -1rem;
   width: 400px;
   position: absolute;
   right: 0.5rem;
 }
 
-.hero-stats{
+.hero-stats {
   z-index: 18;
   font-size: 20px;
-position: absolute;
-right: 9.5rem;
+  position: absolute;
+  right: 9.5rem;
 }
 
-#level{
+#level {
   font-size: 70px;
   font-weight: 900;
   z-index: 20;
   position: absolute;
-right: 20.8rem;
-top:0.7rem;
-color:#532301 ;
+  right: 20.8rem;
+  top: 0.7rem;
+  color: #532301;
 }
 
-#level-sign{
+#level-sign {
   font-size: 50px;
   font-weight: 600;
   z-index: 20;
   position: relative;
   left: 1rem;
-  color:#532301 ;
-
+  color: #532301;
 }
 
-.stats{
+.stats {
   font-size: 40px;
   z-index: 20;
   position: relative;
   left: 1.45rem;
-  top:25px;
-  color:#532301 ;
-
+  top: 25px;
+  color: #532301;
 }
 
-.stats>p{
-  letter-spacing:9px;
-    font-weight: 600;
-padding-bottom: 12px;
+.stats > p {
+  letter-spacing: 9px;
+  font-weight: 600;
+  padding-bottom: 12px;
 }
 
-button{
+button {
   background: none;
-  border:none;
+  border: none;
   background-image: url(../../../assets/images/button.png);
-background-repeat: no-repeat;
-width: 261!important;
-height: 100px;
-padding-inline: 3rem;
-font-size: 30px;
-color: #f7d89e;
-display: flex;
-align-items: center;
-justify-self: center;
-position: absolute;
-left: 1rem;
+  background-repeat: no-repeat;
+  width: 261 !important;
+  height: 100px;
+  padding-inline: 3rem;
+  font-size: 30px;
+  color: #f7d89e;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: absolute;
+  left: 1rem;
 }
 
-.game-over{
-  
-
+.game-over {
 }
 
-.game-over-content{
+.game-over-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color:#532301 ;
-background-color: #f7d89e;
-font-size: 70px;
-height: 100px;
+  color: #532301;
+  background-color: #f7d89e;
+  font-size: 70px;
+  height: 100px;
+}
+
+#control-title {
+  font-size: 40px;
+  color: #532301;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0.7rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+.game-controls > span {
+  font-size: 25px;
+  color: #532301;
+  padding: 1rem 0.5rem;
+}
+.game-controls span div {
+  font-size: 30px;
+  font-weight: 900;
+  margin-right: 5px; 
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+#space-btn {
+  display: flex;
+  justify-content: center;
+  padding: 2rem auto;
+  font-size: 25px;
+  color: #532301;
+  margin: 0.5rem 0 1.5rem 0 ;
+}
+
+.welcome-modal {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bold {
+  font-weight: 900;
+  color: #0c3c16;
+  font-size: 28px;
+}
+#up {
+  transform: rotate(-90deg); /* Повертати стрілку на 90 градусів */
+}
+
+#down {
+  transform: rotate(-90deg);
+}
+
+.space-bold{
+  margin-inline: 10px;
+}
+
+#start-text{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  padding-bottom: 0.4rem;
+}
+
+.start-bold{
+  font-size: 22px;
+  padding-inline: 5px;
 }

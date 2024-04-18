@@ -3,7 +3,6 @@
 
 <div id="shopModal" class="modal" style="display: none;">
   <div class="modal-content">
-    <span class="close" (click)="closeShopModal()">&times;</span>
     <h2>Shop</h2>
     <ul>
       <li *ngFor="let item of items">
@@ -11,5 +10,6 @@
         <button class="buy-btn" (click)="buyItem(item)">Buy</button>
       </li>
     </ul>
+    <p id="close-modal">*press Q to close the Shop</p>
   </div>
 </div>

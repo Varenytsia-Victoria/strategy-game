@@ -76,7 +76,12 @@ li {
   border: 1px solid #888;
   width: 30%;
 }
-
+h2{
+    color: #0c3c16;
+display: flex;
+justify-content: center;
+padding-bottom: 10px;
+}
 .modal-content {
   font-size: 30px;
   background-color: #fed385;
@@ -92,4 +97,8 @@ li {
 }
 .show {
   display: block;
+}
+
+#close-modal{
+  font-size: 18px;
 }

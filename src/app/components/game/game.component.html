@@ -1,28 +1,30 @@
 <div class="game-container">
   <div class="game-content">
     <img id="hero-bar" src="../assets/images/hero-bar.png" alt="" />
-<h2 id="level">{{ currentLevel }}</h2>
+    <h2 id="level">{{ currentLevel }}</h2>
     <div class="hero-stats">
-      
-
       <p id="level-sign">Level</p>
       <div class="stats">
-      <p id="health">{{ hero.health }}</p>
-      <p>{{ hero.attack }}</p>
-      
-      <p>{{ hero.coins }}</p>
-      <p>{{ hero.diamonds }}</p>
-    </div></div>
+        <p id="health">{{ hero.health }}</p>
+        <p>{{ hero.attack }}</p>
 
+        <p>{{ hero.coins }}</p>
+        <p>{{ hero.diamonds }}</p>
+      </div>
+    </div>
 
     <app-inventory class="inventory"></app-inventory>
     <app-shop></app-shop>
     <app-skill-tree></app-skill-tree>
     <button routerLink="/money">Earn money!</button>
-
   </div>
   <img id="inventory" src="../assets/images/inventory.png" alt="" />
-
+  <div class="herobar-imgs">
+    <img src="../../../assets/images/health.png" alt="" />
+    <img src="../../../assets/images/commonSword.png" alt="" />
+    <img src="../../../assets/images/coin.png" alt="" />
+    <img src="../../../assets/images/diamond.png" alt="" />
+  </div>
   <img
     src="../../../assets/images/player.png"
     alt="Hero"
@@ -41,4 +43,35 @@
       <p>Game Over!</p>
     </div>
   </div>
+
+<div class="modal welcome" [ngClass]="{ show: welcome }">
+<div class="modal-content welcome-modal" tabindex="0" (keyup)="handleKeyUp($event)">
+    <p id="control-title">Game Controls</p>
+    <div class="game-controls">
+      <span>
+        <div id="up">&gt;</div> Press <span class="bold">W</span> to move Up
+      </span> <br>
+      <span>
+        <div id="down">&lt;</div> Press <span class="bold">S</span> to move Down
+      </span> <br>
+      <span>
+        <div>&lt;</div> Press <span class="bold">D</span> to move Left
+      </span> <br>
+      <span>
+        <div>&gt;</div> Press <span class="bold">A</span> to move Right
+      </span> <br>
+      <p id="space-btn">
+        Press <span class="bold space-bold"> Space</span> to <br />
+        <span class="bold space-bold">Kill </span> monsters / <span class="bold space-bold">Break </span> stones
+      </p>
+      <span id="start-text">Press <span class="bold start-bold">Q</span> to <span class="bold start-bold">Start</span> the game! </span>
+    </div>
+  </div>
+</div>
+<div class="modal level-up" [ngClass]="{ show: showLevelUpModal }">
+  <div class="modal-content">
+    <span>Level Update!</span>
+  </div>
+</div>
+
 </div>
