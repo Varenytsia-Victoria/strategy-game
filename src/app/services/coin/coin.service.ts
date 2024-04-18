@@ -23,11 +23,12 @@ export class CoinService {
     const coins: Coin[] = [];
 
     for (let i = 0; i < numCoins; i++) {
-      const randomX = Math.random() * (screenWidth - 100) + 50;
-      const randomY = Math.random() * (screenHeight - 100) + 50;
+      const randomX = Math.random() * 1100 + 50;
+      const randomY = Math.random() * 250 + 220;
+
 
       const coin =
-        Math.random() > 0.5
+        Math.random() > 0.4
           ? new GoldCoin(randomX, randomY)
           : new Diamond(randomX, randomY);
 

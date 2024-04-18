@@ -6,6 +6,7 @@ import { MoneyComponent } from './components/money-earning/money.component';
 const routes: Routes = [
   { path: '', component: GameComponent },
   { path: 'money', component: MoneyComponent },
+  //{ path: '*', redirectTo: '/game', pathMatch: 'full' }
 ];
 
 @NgModule({
